@@ -7,34 +7,8 @@
     <link rel="shortcut icon" href="http://www.chenxy.design/favicon.ico" />
 <link rel="bookmark"href="http://www.chenxy.design/favicon.ico" />
     <title>闪电杂货铺</title>
-    
-    <script>
-    var setting = {
-        // 在以下双引号中粘贴【QQ钱包】收款链接
-        qqUrl: "https://i.qianbao.qq.com/wallet/sqrcode.htm?m=tenpay&f=wallet&u=2793747108&a=1&n=%EA%AF%ADl%EA%AF%ADi%EA%AF%ADg%EA%AF%ADh%EA%AF%ADt%EA%AF%ADn%EA%AF%ADi%EA%AF%ADn%EA%AF%ADg&ac=CAEQpOWUtAoY76Os6QU%3D_xxx_sign",		
-        
-        // 在以下双引号中粘贴【微信】收款链接
-        wechatUrl: "wxp://f2f0_eL2E9D_UeFsQe2JkwO7rhq-PIlHB0lw",
-        
-        // 在以下双引号中粘贴【支付宝】收款链接
-        aliUrl: "https://qr.alipay.com/fkx00498i0z8mynfucurt49?t=1563103749043",
-        
-        // 用于动态生成二维码的API，连图官方的，不需要修改。
-        qrcodeApi: "https://t.kkkcd.cn/api/?text="    
-        
-		// 链接转码  链接如何获取详见   http://www.iqshw.com/qqjiqiao/20170918/134463.html
-		/*
-        备用二维码api：
-	http://qr.liantu.com/api.php?text=
-	https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=
-        http://s.jiathis.com/qrcode.php?url=
-        http://www.kuaizhan.com/common/encode-png?large=true&data=
-        http://b.bshare.cn/barCode?site=weixin&url=
-        http://pan.baidu.com/share/qrcode?w=150&h=150&url=
-        */
-    }
-    </script>
-    
+    <script type="text/javascript" src="https://pan.chenxyz.cn/upload/qr.js"></script>
+    <script type="text/javascript" src="https://pan.chenxyz.cn/upload/qr1.js"></script>
     <style>
     * {
         margin: 0; padding: 0;
@@ -125,33 +99,7 @@
         <div class="code-footer">长按以上二维码向我付款</div>
     </div>
     
-    <script>
-    if(navigator.userAgent.match(/Alipay/i)) {
-        // 支付宝
-        window.location.href = setting.aliUrl; 
-    } else if(navigator.userAgent.match(/MicroMessenger\//i)) {
-        // 微信
-        document.getElementById("wechat-url").src = setting.qrcodeApi + urlEncode(setting.wechatUrl);
-        document.getElementById("code-wechat").style.display = "block";
-    } else if(navigator.userAgent.match(/QQ\//i)) {
-        // QQ
-        document.getElementById("qq-url").src = setting.qrcodeApi + urlEncode(setting.qqUrl);
-        document.getElementById("code-qq").style.display = "block";
-    } else {
-        // 其它，显示“万能码”
-        document.getElementById("page-url").src = setting.qrcodeApi + urlEncode(window.location.href);
-        document.getElementById("code-all").style.display = "block";
-    }
-    
-    /*****************************************
-     * url编码函数
-     * 输入参数：待编码的字符串
-     * 输出参数：编码好的
-     ****************************************/
-    function urlEncode(String) {
-        return encodeURIComponent(String).replace(/'/g,"%27").replace(/"/g,"%22");	
-    }
-    </script>
+ 
 
 </body>
 </html>
